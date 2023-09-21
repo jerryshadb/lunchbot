@@ -1,0 +1,5 @@
+__pycache__
+*ipynb*
+config.json
+notebookit
+.DS_Store
