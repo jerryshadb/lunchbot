@@ -7,3 +7,6 @@ Usage:
 Go to project folder and run main.py with parameters current_time and distance. So python3 main.py 12 500
 
 current_time specifies the time of day you want to get weather info for. Weather is read, by default, for the current day at 00:00:00 onwards. Timezones not handled. distance is the radius of restaurants you want to include. I'm not entirely certain how the browser distance functionality works so proceed with caution but I believe it should be more or less ok. 
+
+update 11.12.-23: it's broken due to some changes in the target website and I'm too lazy to fix it, feel free to 
+submit a PR or something 
