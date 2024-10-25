@@ -2,6 +2,8 @@ README.md
 setup.py
 lunchbot/__init__.py
 lunchbot/lounasbotti.py
+lunchbot/restaurant_scraper.py
+lunchbot/weather.py
 lunchbot_cli.egg-info/PKG-INFO
 lunchbot_cli.egg-info/SOURCES.txt
 lunchbot_cli.egg-info/dependency_links.txt
