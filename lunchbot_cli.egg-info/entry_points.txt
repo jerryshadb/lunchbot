@@ -1,0 +1,2 @@
+[console_scripts]
+lunchbot = lunchbot.lounasbotti:main

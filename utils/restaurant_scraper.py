@@ -1,20 +1,14 @@
 '''
-Scrapes https://www.lounaat.info/turku for lunch menus of today. Scapes around 40 nearest restaurants by browser location
-
-Might be a plausible idea to turn this into a class in the future (?)
+Scrapes https://www.lounaat.info/<address-city> for lunch menus of today. 
 '''
 import pandas as pd
 
-import time
+import sys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-
-URL = "https://www.lounaat.info/turku"
-
-
 
 def get_menu_list(url):
     # Create ChromeOptions object to set up headless browsing
@@ -35,11 +29,11 @@ def get_menu_list(url):
     actions = actions.send_keys(Keys.ENTER)
     actions.perform()
 
-    # Get more restaurants by clicking 'See More'
-    driver.find_element(By.CLASS_NAME, 'more.content').click()
-    time.sleep(2)
-    driver.find_element(By.CLASS_NAME, 'more.content').click()
-    time.sleep(2)
+    # Get more restaurants by clicking 'See More'. This is somehow broken but it also isn't that important.
+    #driver.find_element(By.CLASS_NAME, 'more.content').click()
+    #time.sleep(2)
+    #driver.find_element(By.CLASS_NAME, 'more.content').click()
+    #time.sleep(2)
 
     restaurant_divs = driver.find_elements(By.XPATH, "//div[contains(text(), menu.item.category-)]")
 
@@ -50,9 +44,11 @@ def get_menu_list(url):
     for div in restaurant_divs:
         if 'menu item category' in div.get_attribute('class'):
             result_list.append(div.text)
-
+    # Check if result_list is empty and exit with an error message if true
+    if not result_list:
+        print(f"Error: No restaurants found, check input; perhaps the location ({url.split('/')[-1]}) you've provided is incorrect?\nExpected format is <address>-<city>")
+        sys.exit(1) 
     driver.quit()
-
 
     return result_list
 

@@ -1,0 +1,10 @@
+README.md
+setup.py
+lunchbot/__init__.py
+lunchbot/lounasbotti.py
+lunchbot_cli.egg-info/PKG-INFO
+lunchbot_cli.egg-info/SOURCES.txt
+lunchbot_cli.egg-info/dependency_links.txt
+lunchbot_cli.egg-info/entry_points.txt
+lunchbot_cli.egg-info/requires.txt
+lunchbot_cli.egg-info/top_level.txt
