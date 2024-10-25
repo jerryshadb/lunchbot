@@ -32,3 +32,4 @@ Requires-Dist: tzdata==2024.2
 Requires-Dist: urllib3==2.2.3
 Requires-Dist: websocket-client==1.8.0
 Requires-Dist: wsproto==1.2.0
+Requires-Dist: bottleneck==1.4.0

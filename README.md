@@ -51,3 +51,6 @@ conda create --name <env> --file requirements.txt python=3.10
 pip install -e .
 ```
 
+
+## NOTE
+There seem to be some dependency issues present, however the tool still works correctly.
